@@ -4,7 +4,7 @@ from django.db import models
 
 class Job(models.Model):
     title = models.CharField(max_length=100)
-    location = models.
+    location = models
     
 
     # class Meta:

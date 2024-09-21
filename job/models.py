@@ -16,6 +16,10 @@ class Job(models.Model):
     vacancy = models.IntegerField(default=1)
     salary = models.IntegerField(default=0)
     expriance = models.IntegerField(default=1)
+    category = models.ForeignKey("Category", on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.title
     
     
 
@@ -23,8 +27,14 @@ class Job(models.Model):
     #     verbose_name = _("")
     #     verbose_name_plural = _("s")
 
-    def __str__(self):
-        return self.title
+    # def __str__(self):
+    #     return self.title
 
     # def get_absolute_url(self):
     #     return reverse("_detail", kwargs={"pk": self.pk})
+
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.name
